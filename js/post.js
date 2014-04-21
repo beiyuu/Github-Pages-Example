@@ -74,6 +74,9 @@ $(document).ready(function(){
                 item.id = 'menuIndex' + index;
             });
 
+            // add back to top
+            h2.push({name: '回到顶部', id: 'top'});
+
             return {h2:h2,h3:h3}
         }
 
@@ -86,7 +89,7 @@ $(document).ready(function(){
             var h3 = heading.h3;
 
             for(var i=0;i<h2.length;i++){
-                tmpl += '<li><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
+                tmpl += '<li class="h2"><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
 
                 if(h3[i]){
                     for(var j=0;j<h3[i].length;j++){
@@ -111,9 +114,9 @@ $(document).ready(function(){
                     e.preventDefault();
 
                     var selector = $(this).attr('data-id') ? '#'+$(this).attr('data-id') : 'h1'
-                    var scrollNum = $(selector).offset().top;
+                    var scrollNum = (selector == '#top') ? 0 : $(selector).offset().top - 30;
 
-                    $('body, html').animate({ scrollTop: scrollNum-30 }, 400, 'swing');
+                    $('body, html').animate({scrollTop: scrollNum}, 400, 'swing');
                 });
         }
 
@@ -138,12 +141,15 @@ $(document).ready(function(){
                 var scrollTop = [];
                 $.each($('#menuIndex li a'),function(index,item){
                     var selector = $(item).attr('data-id') ? '#'+$(item).attr('data-id') : 'h1'
-                    var top = $(selector).offset().top;
-                    scrollTop.push(top);
+                    if (selector != '#top') {
+                        var top = $(selector).offset().top;
+                        scrollTop.push(top);
+                    }
                 });
 
                 var menuIndexTop = $('#menuIndex').offset().top;
                 var menuIndexLeft = $('#menuIndex').offset().left;
+                var menuIndexWidth = ($(window).width() < 1380) ? $('#menuIndex').width() : $('#content').width() * 0.22;
 
                 $(window).scroll(function(){
                     waitForFinalEvent(function(){
@@ -156,6 +162,7 @@ $(document).ready(function(){
                                 position:'fixed'
                                 ,top:'20px'
                                 ,left:menuIndexLeft
+                                ,width:menuIndexWidth
                             });
                         }else{
                             $('#menuIndex').css({
@@ -175,8 +182,10 @@ $(document).ready(function(){
                                 }
                             }
                         }
-                        $('#menuIndex li').removeClass('on');
-                        $('#menuIndex li').eq(index-1).addClass('on');
+                        if (index > 0) {
+                            $('#menuIndex li').removeClass('on');
+                            $('#menuIndex li').eq(index-1).addClass('on');
+                        }
                     });
                 });
 
