@@ -15,7 +15,7 @@ fieldset,img,a img{border:0;}
 iframe{display:block;}
 abbr,acronym{border:0;font-variant:normal;}
 del{text-decoration:line-through;}
-address,caption,cite,code,dfn,em,th,var {font-style:normal;font-weight:500;}
+address,caption,cite,code,dfn,th,var {font-style:normal;font-weight:500;}
 ol,ul {list-style:none;}
 caption,th{text-align:left;}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
