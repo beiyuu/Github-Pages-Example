@@ -184,3 +184,9 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 @media (max-width: 1300px){
     .home-menu { position:absolute; }
 }
+
+@media screen and (min-width: 1380px) {
+    #content {width:80%;}
+    .sidenav {width:22%;}
+    .entry {width:65%;}
+}
