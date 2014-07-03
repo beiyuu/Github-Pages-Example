@@ -7,11 +7,13 @@ category: blog
 
 ##Grunt是什么？
 
-[Grunt][Grunt]是一个基于JavaScript的任务运行工具。
+Grunt已经out了，请用[Gulp][Gulp]，参考这篇：[Building with Gulp][24]
 
-为什么要使用Grunt，简而言之是为了“自动”，用工具自动完成压缩、编译、单元测试、拼写检查等重复性工作。
+<del>[Grunt][Grunt]是一个基于JavaScript的任务运行工具。</del>
 
-Grunt的社区壮大非常快，现在支持的模块有：[CoffeeScript][1]、 [handlerbars][2]、 [jade][3]、 [JSHint][4]、 [Less][5]、 [RequireJS][6]、 [Sass][7]、 [stylus][8]等。
+<del>为什么要使用Grunt，简而言之是为了“自动”，用工具自动完成压缩、编译、单元测试、拼写检查等重复性工作。</del>
+
+<del>Grunt的社区壮大非常快，现在支持的模块有：[CoffeeScript][1]、 [handlerbars][2]、 [jade][3]、 [JSHint][4]、 [Less][5]、 [RequireJS][6]、 [Sass][7]、 [stylus][8]等。</del>
 
 ##Grunt基本配置
 
@@ -424,6 +426,7 @@ Grunt的基本使用就是这些了，当然还有一些[搭建脚手架][23]等
 [Grunt]: http://gruntjs.com/
 [npm]: https://npmjs.org/
 [node]: http://nodejs.org/
+[Gulp]: http://gulpjs.com/
 [1]: http://coffeescript.org/
 [2]: http://handlebarsjs.com/
 [3]: http://jade-lang.com/
@@ -447,3 +450,4 @@ Grunt的基本使用就是这些了，当然还有一些[搭建脚手架][23]等
 [21]: https://npmjs.org/package/grunt-contrib-uglify
 [22]: http://gruntjs.com/plugins/
 [23]: http://gruntjs.com/project-scaffolding
+[24]: http://www.smashingmagazine.com/2014/06/11/building-with-gulp/
