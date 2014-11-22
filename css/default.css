@@ -15,7 +15,7 @@ fieldset,img,a img{border:0;}
 iframe{display:block;}
 abbr,acronym{border:0;font-variant:normal;}
 del{text-decoration:line-through;}
-address,caption,cite,code,dfn,em,th,var {font-style:normal;font-weight:500;}
+address,caption,cite,code,dfn,th,var {font-style:normal;font-weight:500;}
 ol,ul {list-style:none;}
 caption,th{text-align:left;}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
@@ -63,6 +63,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 .sidenav a { color:#555; font-size:14px; display:block;}
 .entry{margin-bottom:80px;width:680px; float:left; background:#fff; padding:30px; box-shadow:0 2px 6px #ccc; }
 .entry ul{margin-bottom:25px;margin-left:25px;}
+.entry ul ul{margin-bottom:0;}
 .entry p+ul {margin-top:-20px;}
 .entry ul li{margin-bottom:5px;list-style:disc;line-height:1.8em;}
 .entry ol{margin-bottom:25px;margin-left:25px;}
@@ -182,4 +183,10 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 }
 @media (max-width: 1300px){
     .home-menu { position:absolute; }
+}
+
+@media screen and (min-width: 1380px) {
+    #content {width:80%;}
+    .sidenav {width:22%;}
+    .entry {width:65%;}
 }
