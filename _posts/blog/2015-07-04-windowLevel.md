@@ -32,7 +32,6 @@ UIWindowLevel，UIWindow的一个属性。在这里之所以特意强调这个�
 <code>
 	.h文件
 	@property (strong, nonatomic) UIWindow *window;
-
 	@property (strong, nonatomic) UIWindow *alertLevelWindow;
 	.m文件
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -43,7 +42,6 @@ UIWindowLevel，UIWindow的一个属性。在这里之所以特意强调这个�
     self.window.rootViewController = viewController;
     NSLog(@"%f", self.window.windowLevel);
     [self.window makeKeyAndVisible];
-
     CGRect windowRect = CGRectMake(-50,
                                    -50,
                                    [[UIScreen mainScreen] bounds].size.width - 100,
@@ -55,11 +53,9 @@ UIWindowLevel，UIWindow的一个属性。在这里之所以特意强调这个�
     _alertLevelWindow.rootViewController = s;
 //    UIView *alertView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    alertView = s.view;
-//    [_alertLevelWindow addSubview:alertView];
-    
+//    [_alertLevelWindow addSubview:alertView]; 
     NSLog(@"%f", _alertLevelWindow.windowLevel);
-    [_alertLevelWindow makeKeyAndVisible];
-    
+    [_alertLevelWindow makeKeyAndVisible];    
     return YES;
 ｝
 </code>
