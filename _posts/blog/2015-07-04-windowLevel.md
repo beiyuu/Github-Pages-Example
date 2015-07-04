@@ -61,7 +61,7 @@ UIWindowLevel，UIWindow的一个属性。在这里之所以特意强调这个�
 </code>
 
 以上代码运行出来的效果是这样的：
-<img src="/images/blog/Level.png">
+<img src="/images/blog/UIWinLevel.png">
 
 以上代码说明：大家在看这个代码的时候可以看这个blog<a href="http://www.cnblogs.com/smileEvday/archive/2012/03/27/2420362.html">一片枫叶</a>写的挺好的，不过有点“旧“了。
 
