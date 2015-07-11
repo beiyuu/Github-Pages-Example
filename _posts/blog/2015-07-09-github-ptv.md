@@ -8,12 +8,12 @@ category: blog
 这样做了，稍后我在更新用代理模式传值的方法。
 
 既然是两个UIViewController传值，那么久直觉创建一个两个界面的工程吧，样子大概是这个样子。
-<img src="/images/blog/tsv/ui_tv">
+<img src="/images/blog/tsv/ui_tv.png">
 
 相信你做出这样一个界面应该是妥妥的没问题。现在我来简单介绍一下，首先将ViewController设置为UINavigationController的根控制器，然后添加一个textfield和uibutton，然后在拉出一个viewcontroller，命名为TextfieldViewController，添加一个lable，用一个showsegue链接起来，并给他一个标示，在这里我用的是abc，作者很懒，这个名字还是费了好长时间才想出来的。
 
-    完成上述之后我大致说下咱们的要求，要求就是将ViewController里inputTextField里面的值传到TV（TextFiledViewController的简写，下同）,这个时候我们要在TV声明一个变量，以供传值使用喔把他命名为str，完成所有的事情之后我们就可以开始我们的代码了。
-    
+完成上述之后我大致说下咱们的要求，要求就是将ViewController里inputTextField里面的值传到TV（TextFiledViewController的简写，下同）,这个时候我们要在TV声明一个变量，以供传值使用喔把他命名为str，完成所有的事情之后我们就可以开始我们的代码了。
+
 <code>
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
    if ([segue.identifier isEqualToString:@"abc"]) {
