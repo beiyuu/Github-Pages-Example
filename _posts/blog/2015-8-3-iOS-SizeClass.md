@@ -18,9 +18,9 @@ Size classes are traits assigned to a user interface element, such as a screen o
 不理解理解上面的问题不要紧，咱们看下苹果公司给出的例子，相信大家分分钟钟就能明白这两种类型是怎么回事了。
 
 首先咱们先看下regular这个类型，还是使用苹果给出的例子
-<img src="/images/blog/sizeclass/iPad">
+<img src="/images/blog/sizeclass/iPad.png">
 大家看完之后或许会说为什么都是regular？？？ compact哪？
 别急，往下看：
-<img src="/images/blog/sizeclass/iPhone">
+<img src="/images/blog/sizeclass/iPhone.png">
 
 至此SizeClass的初步你就算了解了。官方有许多介绍的文档。大家最好多看看。
