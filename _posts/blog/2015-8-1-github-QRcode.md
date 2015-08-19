@@ -59,3 +59,14 @@ description: 原生的二维码扫描
 </code>
 
 最后输出的结果就是图像中的内容了，好了到此今天的内容就完结。
+
+今天在网上看到了一个困扰了我很久的问题，就是怎样设置扫描的有效区域。下面我就为大家介绍这么个属性。
+@property ( nonatomic ) CGRect rectOfInterest NS_AVAILABLE_IOS ( 7 _0);
+官网行的解释是：
+@discussion
+The value of this property is a CGRect that determines the receiver's rectangle of interest for each frame of video.  
+The rectangle's origin is top left and is relative to the coordinate space of the device providing the metadata.  Specifying 
+a rectOfInterest may improve detection performance for certain types of metadata. The default value of this property is the 
+value CGRectMake(0, 0, 1, 1).  Metadata objects whose bounds do not intersect with the rectOfInterest will not be returned.
+
+大家都是英语好的一水的人，我就不翻译给大家看了。不过大概意思我还是给带说一下，有第一句话我们可以知道这个属性的值是决定区域，就是你每一帧画面中你感兴趣的区域。我*，不就是我们想要的吗？不过注意，他的起始原点在左上方，默认值是（0， 0， 1， 1），也就是说这事个比例值，记得将你设置好的区域转化比例值哦。
