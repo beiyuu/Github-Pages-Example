@@ -5,8 +5,8 @@ layout: home
 <div class="index-content opinion">
     <div class="section">
         <ul class="artical-cate">
-            <li><a href="/"><span>Blog</span></a></li>
-            <li class="on" style="text-align:center"><a href="/opinion"><span>iOS-Swift</span></a></li>
+            <li><a href="/"><span>iOS</span></a></li>
+            <li class="on" style="text-align:center"><a href="/opinion"><span>python-html-css</span></a></li>
             <li style="text-align:right"><a href="/project"><span>C/C++</span></a></li>
         </ul>
 
