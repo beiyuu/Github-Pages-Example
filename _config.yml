@@ -5,7 +5,7 @@ pygments: true
 paginate: 8
 permalink: /:title
 
-title: BeiYuu.com
-url: http://beiyuu.com
+title: LimYang.com
+url: http://limyang.com
 feed: /atom.xml
-author_info: <a href="http://beiyuu.com/">BeiYuu</a>
+author_info: <a href="http://limyang.com/">LimYang</a>
