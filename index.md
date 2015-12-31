@@ -8,6 +8,7 @@ layout: home
             <li class="on"><a href="/"><span>Blog</span></a></li>
             <li style="text-align:center"><a href="/opinion"><span>Opinion</span></a></li>
             <li style="text-align:right"><a href="/project"><span>Project</span></a></li>
+             <li style="text-align:right"><a href="/project"><span>private</span></a></li>
         </ul>
 
         <div class="cate-bar"><span id="cateBar"></span></div>
@@ -24,3 +25,5 @@ layout: home
     <div class="aside">
     </div>
 </div>
+
+
