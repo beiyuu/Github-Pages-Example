@@ -5,7 +5,14 @@ pygments: true
 paginate: 8
 permalink: /:title
 
+name: Just Write
+description: >
+  O troupe of little vagrants of the
+  world, leave your footprints in my
+  words.
+
+
 title: map.im
 url: http://map.im
 feed: /atom.xml
-author_info: <a href="http://map.im/">BeiYuu</a>
+author_info: <a href="http://map.im/">Rice</a>
