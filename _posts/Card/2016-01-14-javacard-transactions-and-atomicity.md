@@ -1,8 +1,6 @@
 ---
 id: 429
 title: JavaCard Transactions and Atomicity (事务和原子)
-date: 2016-01-14T11:13:09+00:00
-author: Jhihmin
 layout: post
 guid: http://map.im/?p=429
 permalink: /card/javacard-transactions-and-atomicity/
