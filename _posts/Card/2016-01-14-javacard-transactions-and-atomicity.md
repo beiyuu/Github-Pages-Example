@@ -1,0 +1,99 @@
+---
+id: 429
+title: JavaCard Transactions and Atomicity (事务和原子)
+date: 2016-01-14T11:13:09+00:00
+author: Jhihmin
+layout: post
+guid: http://map.im/?p=429
+permalink: /card/javacard-transactions-and-atomicity/
+categories:Card
+---
+事务是对永久数据的更新的一个逻辑的集合。例如，从一个账户传输一定数量的钱到另一个账
+
+户是银行的事务。对于一个事务来说成为原子操作是很重要的：或者所有的数据都被更新，或者什么都没有更新。 JCRE 对原子的事务提供了强壮的支持，以便在事务不能正常完成的情况下卡上的数据被恢复到原来事务开始前的状态。这个机制将保护在事务的中间发生如掉电等事件、引起数据混乱的程序错误等情况下，一个事务的所有步骤都不应该正常完成。
+
+  1. **原子操作**
+
+原子操作定义了在对一个单一的对象或者类域或者数组元素进行修改过程中发生停止、失败、
+
+或严重异常之后卡如何处理永久数据内容。如果在修改过程中发生掉电， applet 开发者应该能够信赖当电源恢复时域或者数组元素中包含的内容。
+
+Java 卡平台保证对一个单一的永久对象或类的域的修改是原子的。另外，Java 卡平台将为永久
+
+数组提供单一的组件级别的原子操作。也就是，如果在对跨越 CAD 会话进行保护的数据元素（一个对象/类中的域或数组中的元素）进行修改的过程中智能卡掉电，数据元素将被恢复到它以前的值。
+
+一些方法也能保证对多个数据元素的块修改的原子操作。如： Util.arrayCopy()方法的原子性保证要么所有的字节都被复制了，要么目标数组被恢复为它以前的值。
+
+一个 applet 也可以不为数组修改请求原子操作。 Util.arrayCopyNonAtomic()方法就是为这个目的提供的。在处理过程中它不使用事务提交缓冲区甚至它在一个事务中被调用时也是这样。
+
+<ol start="2">
+  <li>
+    <strong>事务</strong>
+  </li>
+</ol>
+
+一个 applet 可能需要原子的修改多个不同对象中的几个不同的域或者数组元素。或者所有的修
+
+改都正确的发生，或者所有的域/元素被恢复为它们以前的值。
+
+Java 卡 平 台 支 持 一 种 事 务 模 式 ， 在 这 个 模 式 中 一 个 applet 可 以 通 过 调 用JCSystem.beginTransaction()方法开始一系列的原子修改操作。从这点以后，每一个对象的修改都是假定的修改。域或数组元素呈现的是已经被修改了-读这些域/数组元素将得到最后假定的值-但是这个修改还没有提交。
+
+当 applet 调用 JCSystem.commitTransaction()方法时，所有假定的修改将被提交到永久存储区。
+
+如果在 JCSystem.commitTransaction()完成之前发生掉电或者其它的系统故障，所有假定的修改的域或数组元素将被恢复到它们以前的值。如果 applet 遇到一个内部问题或者决定取消这个事务，可以通过调用 JCSystem.abortTransaction()方法在程序上撤消那些假定的修改。
+
+<ol start="3">
+  <li>
+    <strong>事务持续时间</strong>
+  </li>
+</ol>
+
+当从 applet 的 select、process、deselect 和 install 方法返回后 JCRE 重新得到程序上的控制时，事务总是结束的。一个 applet 对 commitTransaction 的调用或者是一个事务的取消（或者被 applet 在程序上取消、或者被 JCRE 缺省的取消）都代表一个事务的正常结束。事务持续时间是一个事务的生命期，这个生命期是在对 JCSystem.beginTransaction()的调用和对
+
+commitTransaction()的调用或事务取消的期间。
+
+<ol start="4">
+  <li>
+    <strong>嵌套的事务</strong>
+  </li>
+</ol>
+
+这个模式当前假定事务是不能嵌套的。在同一时刻处理中只能有一个事务。如果当一个事务已
+
+经存在于处理中时调用 JCSystem.beginTransaction()方法，那么将会抛出一个 TransactionException 异常。JCSystem.transactionDepth()方法用来确定是否有一个事务在处理中。
+
+<ol start="5">
+  <li>
+    <strong>掉电或复位事务失败</strong>
+  </li>
+</ol>
+
+当一个事务正在处理时如果发生掉电（tear）或卡被复位或其它系统故障，那么 JCRE 将所有的JCSystem.beginTransaction 调用后假定修改的域和数组元素的值恢复到它们以前的值。
+
+从掉电、复位和故障中恢复后初始化卡时这个动作将被 JCRE 自动执行。 JCRE 确定那些对象 （如果有的话）是被假定修改的，并恢复它们。
+
+注 意 ： 在 一 个 事 务 处 理 的 过 程 中 ， 使 用 了 Util.arrayCopyNonAtomic() 方 法 和Util.arrayFillNonAtomic()方法修改的数组元素的内容在发生掉电或复位后是不可预知的。
+
+注意：在由于掉电或卡复位而失败的事务中创建的实例所使用的对象空间可以被 JCRE 恢复的。
+
+&nbsp;
+
+接下来总结一下Util类中几个方法的相关用法:
+
+Util.arrayCopy带原子性
+
+Util.arrayCopyNonAtomi/Util.arrayFillNonAtomicc任何情况下都无原子性(即使在事物当中)
+
+Util.arrayCopy受事物机制的影响（所有事物中的更新要么全成功、要么全失败）
+
+Util.getShort/Util.arrayFill/Util.makeShort/Util.setShort原子性与事物用法同Util.arrayCopy
+
+&nbsp;
+
+_ _
+
+**参考文档**
+
+_Java Card Platform Runtime Environment Specification_
+
+Java CardTM application programming interface (API)
