@@ -1,10 +1,8 @@
 ---
-id: 429
 title: JavaCard Transactions and Atomicity (事务和原子)
 layout: post
-guid: http://map.im/?p=429
-permalink: /card/javacard-transactions-and-atomicity/
 categories:Card
+description:JavaCard事物与原子性介绍
 ---
 事务是对永久数据的更新的一个逻辑的集合。例如，从一个账户传输一定数量的钱到另一个账
 
