@@ -17,12 +17,10 @@ Data：在命令的数据字段中发送的字节串
 Le：在向命令响应的数据字段中期望的字节最大数  
 
 #####命令可分为四种情况：
-| 格式|    命令组成|  
-| :-------- | :-- |
-| Case1|  CLA INS P1 P2   |
-| Case2|  CLA INS P1 P2 Le|
-| Case3| CLA INS P1 P2 Lc Data|
-| Case4| CLA INS P1 P2 Lc Data Le|
+Case1 |  CLA INS P1 P2  
+Case2 |  CLA INS P1 P2 Le  
+Case3 | CLA INS P1 P2 Lc Data  
+Case4 | CLA INS P1 P2 Lc Data Le  
 #####Case1
 这种情况时，命令中没有数据送到卡（ Lc）中，也没有数据从卡中返回（ Le）。  
 不含安全报文的命令： CLA | INS | P1 | P2   
@@ -46,13 +44,9 @@ Le：在向命令响应的数据字段中期望的字节最大数
 
 ####响应格式
 #####格式1
-| 数据|    状态字|
-| :-------- | :-- |
-| Data|  SW1 SW2   |
+| Data |  SW1 SW2 |  
 #####格式2
-|状态字|
-|:-- |
-|SW1 SW2   |
+| SW1 SW2 |  
 ######响应各字段含义
 Data：在响应的数据字段中收到的字节串  
 SW1：状态字 1  
