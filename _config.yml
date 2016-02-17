@@ -11,6 +11,10 @@ description: >
   world, leave your footprints in my
   words.
 
+comments :
+provider : disqus
+disqus :
+short_name : mapim
 
 title: Hello Card
 url: http://map.im
