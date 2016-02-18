@@ -6,7 +6,6 @@ description: 非对称算法
 ---
 1978年，MIT三位年青数学家R.L.Rivest，A.Sham和L.Adleman发现了一种用数论构造双钥的方法，称作MIT体制，后来被广泛称之RSA体制。它既可用于加密、又可用于数字签字，易懂且易于实现(如果你了解了椭圆曲线加密你就知道这个有多简单了)，是目前仍然安全并且逐步被广泛应用的一种体制。国际上一些标准化组织ISO、ITU、及SWIFT等均已接受RSA体制作为标准。在Internet中采用的PGP(Pretty GoodPrivacy)也将RSA作为传送会话密钥和数字签字的标准算法。
 
-&nbsp;
 
 **1.选取两个不同的大素数 p 和 q.**
 
@@ -62,7 +61,6 @@ m ≡ c^e mod n.
 
 若你实现了一个解密的函数RSA_Dencryption,且知道了e、d和n，那么这个函数都可以加密、解密、签名、验签。
 
-&nbsp;
 
 注1：
   
@@ -119,11 +117,3 @@ m2 ≡ m1*(m1^(p-1))^(kq-k) ≡ m1 mod p
 m2 ≡ m1 mod p , m2 ≡ m1 mod q , n = pq , m1 < n , m2 < n ,p,q 是两个不同的素数 —> m2 ≡ m1 mod n = m1 , m2 mod n = m2 ,故 m1 = m2.
 
 证毕.
-
-&nbsp;
-
-版权所有 [http://map.im](http://map.im/), 转载请保留此段
-
-&nbsp;
-
-&nbsp;
