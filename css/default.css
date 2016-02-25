@@ -70,7 +70,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 .entry blockquote{margin-left:25px;font-size:14px;font-style:italic}
 .entry img{max-width:670px;display:block;margin:10px auto;}
 
-
+/*
 .index-content .aside {
     position: fixed;
     top: 0;
@@ -83,7 +83,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
     background-size:cover;
     background-position:50% 50%;
 }
-/*.Card .aside{
+.Card .aside{
     background-image:url(https://d233eq3e3p3cv0.cloudfront.net/max/1000/0*cF2i1ZosSP_UTJig.jpeg);
 }
 .opinion .aside{
