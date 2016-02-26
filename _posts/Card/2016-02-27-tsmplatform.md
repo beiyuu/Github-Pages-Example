@@ -1,9 +1,10 @@
 ---
 layout:     post
-title:      APDU命令与响应格式1
+title:      TSM解析
 category: Card
-description: APDU结构及响应格式1
+description: Trusted Service Manager
 ---
+
 TSM，可信服务管理平台(Trusted Service Manager)，提供应用发行管理和安全模块管理等功能的系统。在基于智能卡的移动支付场景中，为智能卡空中发卡及多应用管理提供业务、技术和安全保障，
 实现卡片发行方、应用提供方和TSM服务方互联互信。  
 
