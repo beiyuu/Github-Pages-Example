@@ -70,7 +70,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
 .entry blockquote{margin-left:25px;font-size:14px;font-style:italic}
 .entry img{max-width:670px;display:block;margin:10px auto;}
 
-
+/*
 .index-content .aside {
     position: fixed;
     top: 0;
@@ -83,7 +83,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
     background-size:cover;
     background-position:50% 50%;
 }
-.blog .aside{
+.Card .aside{
     background-image:url(https://d233eq3e3p3cv0.cloudfront.net/max/1000/0*cF2i1ZosSP_UTJig.jpeg);
 }
 .opinion .aside{
@@ -93,7 +93,7 @@ pre ol{margin-left:25px;list-style-type:decimal;}
     background-image:url('https://d233eq3e3p3cv0.cloudfront.net/max/1000/0*kTUZamBulGQZg1MW.jpeg')
 }
 .index-content .section { margin-left:30%; padding-top:80px; padding-right:15%; ;}
-
+*/
 .index-content .artical-list { width:70%; margin:0 auto; }
 .index-content .artical-list li { margin-bottom:70px; }
 .index-content h2 { font-size:20px; margin-bottom:15px; word-break: break-all;}
@@ -165,7 +165,7 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
     .index-content .cate-bar { width:85%; }
     .index-content .artical-cate { margin-top:50px; }
 
-    .blog .aside,
+    .Card .aside,
     .project .aside,
     .opinion .aside {display:none;background-image:none;}
 }

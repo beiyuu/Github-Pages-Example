@@ -5,7 +5,18 @@ pygments: true
 paginate: 8
 permalink: /:title
 
-title: BeiYuu.com
-url: http://beiyuu.com
+name: Just Write
+description: >
+  O troupe of little vagrants of the
+  world, leave your footprints in my
+  words.
+
+comments :
+provider : disqus
+disqus :
+short_name : mapim
+
+title: Hello Card
+url: http://map.im
 feed: /atom.xml
-author_info: <a href="http://beiyuu.com/">BeiYuu</a>
+author_info: <a href="http://map.im/">APDU</a>
