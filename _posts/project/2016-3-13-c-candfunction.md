@@ -26,4 +26,4 @@ OK, 看一下他们的定义:
 	int *p;
 	p = &num;
 
-
+iiii
