@@ -21,7 +21,7 @@ layout: default
     </div>
 
     <div class="sidenav">
-        <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1855270953&verifier=375b89d6&dpc=1"></iframe>
+        <iframe width="200" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=200&height=75&fansRow=2&ptype=0&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=3323880684&verifier=84379c18&dpc=1"></iframe>
     </div>
 
     <div class="sidenav">
@@ -32,13 +32,20 @@ layout: default
         {% endfor %}
         </ul>
 
-        <h2>Opinion</h2>
+        <h2>iOS-Swift</h2>
         <ul class="artical-list">
         {% for post in site.categories.opinion%}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
         </ul>
 
+        <h2>iOS-Swift</h2>
+        <ul class="artical-list">
+        {% for post in site.categories.iOS-Swift%}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+        
         <h2>Project</h2>
         <ul class="artical-list">
         {% for post in site.categories.project%}
