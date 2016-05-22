@@ -1,7 +1,17 @@
 ---
-layout:         page
-title:          出错啦！
+layout: default
+title: 出错啦！
 ---
-<h1>出错啦。。。</h1>
 
-<p>看看别的吧先</p>
+<body>
+  <div class="post-wrapper">
+    <h1 class="post-title" style="margin-bottom: 50px;"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+    <ul>
+      {% for post in site.categories.blog %}
+      <li>
+        <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>

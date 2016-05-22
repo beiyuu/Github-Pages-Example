@@ -1,0 +1,14 @@
+<div class="about-wrapper">
+  <iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1855270953&verifier=375b89d6&dpc=1" style="margin: 30px 0;"></iframe>
+
+  <div class="aboutme">
+    <h2><a href="/">所有文章</a></h2>
+    <ul>
+      {% for post in site.categories.blog %}
+      <li>
+        <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

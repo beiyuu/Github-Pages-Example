@@ -1,8 +1,3 @@
-auto: true
-
-markdown: rdiscount
-pygments: true
-paginate: 8
 permalink: /:title
 
 title: BeiYuu.com

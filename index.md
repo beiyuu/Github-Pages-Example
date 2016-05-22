@@ -1,26 +1,28 @@
 ---
-layout: home
+layout: default
 ---
 
-<div class="index-content blog">
-    <div class="section">
-        <ul class="artical-cate">
-            <li class="on"><a href="/"><span>Blog</span></a></li>
-            <li style="text-align:center"><a href="/opinion"><span>Opinion</span></a></li>
-            <li style="text-align:right"><a href="/project"><span>Project</span></a></li>
-        </ul>
-
-        <div class="cate-bar"><span id="cateBar"></span></div>
-
-        <ul class="artical-list">
-        {% for post in site.categories.blog %}
-            <li>
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                <div class="title-desc">{{ post.description }}</div>
-            </li>
-        {% endfor %}
-        </ul>
-    </div>
+<body>
+  <div class="index-wrapper">
     <div class="aside">
+      <div class="info-card">
+        <h1>BeiYuu</h1>
+        <a href="http://weibo.com/beiyuu/" target="_blank"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
+        <a href="http://www.douban.com/people/beiyuu/" target="_blank"><img src="http://www.douban.com/favicon.ico" alt="" width="22"/></a>
+        <a href="http://instagram.com/beiyuu/" target="_blank"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
+      </div>
+      <div id="particles-js"></div>
     </div>
-</div>
+
+    <div class="index-content">
+      <ul class="artical-list">
+        {% for post in site.categories.blog %}
+        <li>
+          <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+          <div class="title-desc">{{ post.description }}</div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</body>
